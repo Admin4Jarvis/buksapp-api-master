@@ -1,10 +1,10 @@
 pipeline {
     agent any
     environment {
-        PROJECT_ID = "jenkins-project-328308"
+        PROJECT_ID = "spry-compound-408107"
         CLUSTER_NAME = "k8s-cluster"
-        LOCATION = "us-central1-c"
-        CREDENTIALS_ID = 'jenkins-project'
+        LOCATION = "asia-southeast1"
+        CREDENTIALS_ID = 'My First Project'
     }
     stages {
         stage('pull from github repo'){
@@ -14,15 +14,15 @@ pipeline {
         }
         stage('build docker image'){
             steps{
-                sh "docker build -t bukunmi00/buksapp-backend:${env.BUILD_ID} ."                
+                sh "docker build -t admin4jarvis/buksapp-backend:${env.BUILD_ID} ."                
             }
         }
         stage('push docker image to dockerhub'){
             steps{
                 withCredentials([string(credentialsId: 'DOCKER_PASS', variable: 'docker_pass')]) {
-                    sh "docker login -u bukunmi00 -p ${docker_pass}"
+                    sh "docker login -u admin4jarvis -p ${docker_pass}"
                 }
-                sh "docker push bukunmi00/buksapp-backend:${env.BUILD_ID}"
+                sh "docker push admin4jarvis/buksapp-backend:${env.BUILD_ID}"
             }
             
         }
