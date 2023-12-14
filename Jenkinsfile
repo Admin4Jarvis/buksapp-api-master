@@ -20,7 +20,7 @@ pipeline {
         stage('push docker image to dockerhub'){
             steps{
                 withCredentials([string(credentialsId: 'DOCKER_PASS', variable: 'docker_pass')]) {
-                    sh "docker login -u admin4jarvis -p ${docker_pass}"
+                    sh "docker login -u admin4jarvis -p Santhipavan@27"
                 }
                 sh "docker push admin4jarvis/buksapp-backend:${env.BUILD_ID}"
             }
