@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: buksapp-backend
-          image: bukunmi00/buksapp-backend:tagversion
+          image: admin4jarvis/buksapp-backend:tagversion
           imagePullPolicy: Always
           ports:
           - containerPort: 4000
