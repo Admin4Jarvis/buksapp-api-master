@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('pull from github repo'){
             steps{
-                git "https://github.com/Bukunmitanimonure/buksapp-api.git"
+                git "https://github.com/Admin4Jarvis/buksapp-api-master.git"
             }
         }
         stage('build docker image'){
