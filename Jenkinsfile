@@ -4,7 +4,7 @@ pipeline {
         PROJECT_ID = "spry-compound-408107"
         CLUSTER_NAME = "k8s-cluster"
         LOCATION = "asia-southeast1"
-        CREDENTIALS_ID = 'My First Project'
+        CREDENTIALS_ID = 'test'
     }
     stages {
         stage('pull from github repo'){
